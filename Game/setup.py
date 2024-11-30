@@ -1,8 +1,8 @@
 from Game.spawns import *
 from SpritesLogic.collision import CollisionsHandler
 from UI.GameScenes import GameScenes
-from UI.health import PlayerHealth
-from UI.score import Score
+from UI.Health import PlayerHealth
+from UI.Score import Score
 from UI.FPS import FPS
 
 

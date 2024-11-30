@@ -8,7 +8,7 @@ from UI.GameScenes import *
 from SpritesLogic.player import *
 from Game.spawns import *
 from sys import exit
-from UI.score import *
+from UI.Score import *
 
 class LevelsHandler(Game):
 

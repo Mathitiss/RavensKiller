@@ -1,6 +1,6 @@
 import pygame.sprite # type: ignore
 from SpritesLogic.bullet import *
-from UI.health import *
+from UI.Health import *
 
 
 def shoot_bullet(player_x, player_y, direction):
@@ -91,8 +91,8 @@ class Player(pygame.sprite.Sprite):
 
     def player_running_animation(self):
         keys = pygame.key.get_pressed()
-        if not keys[pygame.K_SPACE]:
-            if keys[pygame.K_RIGHT]:
+        if not keys[pygame.K_SPACE]:    #  and not keys[pygame.K_G]
+            if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
                 self.player_index += 0.2
                 self.player_current_direction = 0
                 if self.player_index >= len(self.player_run_right):
@@ -100,7 +100,7 @@ class Player(pygame.sprite.Sprite):
                 if self.rect.right <= self.SCREEN_WIDTH:
                     self.rect.right += self.player_speed
                 self.image = self.player_run_right[int(self.player_index)]
-            elif keys[pygame.K_LEFT]:
+            elif keys[pygame.K_LEFT] or keys[pygame.K_a]:
                 self.player_index += 0.2
                 self.player_current_direction = 1
                 if self.player_index >= len(self.player_run_left):
@@ -117,7 +117,7 @@ class Player(pygame.sprite.Sprite):
 
     def player_jump(self):
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_UP] and self.rect.bottom == self.PLAYER_GROUND_POS:
+        if keys[pygame.K_UP] or keys[pygame.K_w] and self.rect.bottom == self.PLAYER_GROUND_POS:
             self.gravity = -20
 
     def player_shoot(self):
