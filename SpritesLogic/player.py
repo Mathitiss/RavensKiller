@@ -89,6 +89,31 @@ class Player(pygame.sprite.Sprite):
             pygame.image.load('assets/Player/ShootLeft6.png')
         ]
 
+        # grenade throwing sprites
+        self.grenade_throw_right = [
+            pygame.image.load('assets/Player/GrenadeRight1.png'),
+            pygame.image.load('assets/Player/GrenadeRight2.png'),
+            pygame.image.load('assets/Player/GrenadeRight3.png'),
+            pygame.image.load('assets/Player/GrenadeRight4.png'),
+            pygame.image.load('assets/Player/GrenadeRight5.png'),
+            pygame.image.load('assets/Player/GrenadeRight6.png'),
+            pygame.image.load('assets/Player/GrenadeRight7.png'),
+            pygame.image.load('assets/Player/GrenadeRight8.png'),
+            pygame.image.load('assets/Player/GrenadeRight9.png')
+        ]
+
+        self.grenade_throw_left = [
+            pygame.image.load('assets/Player/GrenadeLeft1.png'),
+            pygame.image.load('assets/Player/GrenadeLeft2.png'),
+            pygame.image.load('assets/Player/GrenadeLeft3.png'),
+            pygame.image.load('assets/Player/GrenadeLeft4.png'),
+            pygame.image.load('assets/Player/GrenadeLeft5.png'),
+            pygame.image.load('assets/Player/GrenadeLeft6.png'),
+            pygame.image.load('assets/Player/GrenadeLeft7.png'),
+            pygame.image.load('assets/Player/GrenadeLeft8.png'),
+            pygame.image.load('assets/Player/GrenadeLeft9.png')
+        ]
+
     def player_running_animation(self):
         keys = pygame.key.get_pressed()
         if not keys[pygame.K_SPACE]:    #  and not keys[pygame.K_G]
@@ -134,6 +159,9 @@ class Player(pygame.sprite.Sprite):
             self.image = self.player_shoot_left[int(self.player_shoot_index)]
         else:
             self.player_shoot_index = 0
+
+    def grenade_throw(self):
+        pass
 
     def player_gravity(self):
         self.gravity += 1
