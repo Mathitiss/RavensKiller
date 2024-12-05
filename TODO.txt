@@ -1,3 +1,0 @@
-1. Try to add grenade attack 'K_G';
-2. Try to add dead animation;
-3. Try to implement in WEB
